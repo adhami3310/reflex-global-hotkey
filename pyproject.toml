@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "reflex-global-hotkey"
-version = "1.0.0"
+version = "1.1.0"
 description = "Global Hotkey Watcher for Reflex"
 authors = ["Khaleel Al-Adhami <khaleel.aladhami@gmail.com>"]
 repository = "https://github.com/adhami3310/reflex-global-hotkey"

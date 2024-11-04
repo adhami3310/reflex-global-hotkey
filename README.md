@@ -3,7 +3,7 @@
 Listens to hotkeys in the global scope and calls event handler as necessary.
 
 ```python
-from reflex_global_hotkey import global_hoykey_watcher
+from reflex_global_hotkey import global_hotkey_watcher
 
 class State(rx.State):
     last_key_pressed: str = ""
@@ -14,7 +14,7 @@ class State(rx.State):
 def index():
     return rx.fragment(
         State.last_key_pressed,
-        global_hoykey_watcher(
+        global_hotkey_watcher(
             on_key_down=State.on_key
         )
     )
@@ -23,7 +23,7 @@ def index():
 You can special case on the event key:
 
 ```python
-global_hoykey_watcher(
+global_hotkey_watcher(
     on_key_down=lambda key_name: rx.cond(
         rx.Var.create(
             ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"]

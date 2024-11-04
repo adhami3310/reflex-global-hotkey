@@ -33,6 +33,6 @@ class GlobalHotkeyWatcher(Fragment):
         ]
 
 
-def global_hoykey_watcher(on_key_down: EventType) -> GlobalHotkeyWatcher:
+def global_hotkey_watcher(on_key_down: EventType) -> GlobalHotkeyWatcher:
     """Create a GlobalHotkeyWatcher component."""
     return GlobalHotkeyWatcher(on_key_down=on_key_down)
