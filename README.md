@@ -3,6 +3,8 @@
 Listens to hotkeys in the global scope and calls event handler as necessary.
 
 ```python
+from reflex_global_hotkey import global_hoykey_watcher
+
 class State(rx.State):
     last_key_pressed: str = ""
 
