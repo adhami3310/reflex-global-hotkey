@@ -32,6 +32,15 @@ class GlobalHotkeyWatcher(Fragment):
             % str(Var.create(self.event_triggers["on_key_down"]))
         ]
 
+    def render(self) -> dict:
+        """Render the component."""
+        return {
+            "name": "Fragment",
+            "contents": "",
+            "children": [],
+            "props": {},
+        }
+
 
 def global_hotkey_watcher(on_key_down: EventType) -> GlobalHotkeyWatcher:
     """Create a GlobalHotkeyWatcher component."""
