@@ -1,7 +1,9 @@
 """A Reflex component that listens for key events globally."""
 
+from __future__ import annotations
+
 from reflex import Fragment, Var
-from reflex.event import EventHandler, EventType, key_event
+from reflex.event import EventHandler, EventType, key_event, KeyInputInfo
 from reflex.utils import imports
 
 
@@ -32,6 +34,17 @@ class GlobalHotkeyWatcher(Fragment):
             % str(Var.create(self.event_triggers["on_key_down"]))
         ]
 
+    @classmethod
+    def create(
+        cls,
+        on_key_down: EventType[str, KeyInputInfo]
+        | EventType[str]
+        | EventType[()]
+        | None = None,
+    ) -> GlobalHotkeyWatcher:
+        """Create a GlobalHotkeyWatcher component."""
+        return cls(on_key_down=on_key_down)
+
     def render(self) -> dict:
         """Render the component."""
         return {
@@ -42,6 +55,11 @@ class GlobalHotkeyWatcher(Fragment):
         }
 
 
-def global_hotkey_watcher(on_key_down: EventType) -> GlobalHotkeyWatcher:
+def global_hotkey_watcher(
+    on_key_down: EventType[str, KeyInputInfo]
+    | EventType[str]
+    | EventType[()]
+    | None = None,
+) -> GlobalHotkeyWatcher:
     """Create a GlobalHotkeyWatcher component."""
     return GlobalHotkeyWatcher(on_key_down=on_key_down)
