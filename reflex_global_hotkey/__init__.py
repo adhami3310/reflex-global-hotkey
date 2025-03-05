@@ -43,7 +43,7 @@ class GlobalHotkeyWatcher(Fragment):
         | None = None,
     ) -> GlobalHotkeyWatcher:
         """Create a GlobalHotkeyWatcher component."""
-        return cls(on_key_down=on_key_down)
+        return super().create(on_key_down=on_key_down)
 
     def render(self) -> dict:
         """Render the component."""
