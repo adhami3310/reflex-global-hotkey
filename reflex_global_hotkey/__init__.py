@@ -62,4 +62,4 @@ def global_hotkey_watcher(
     | None = None,
 ) -> GlobalHotkeyWatcher:
     """Create a GlobalHotkeyWatcher component."""
-    return GlobalHotkeyWatcher(on_key_down=on_key_down)
+    return GlobalHotkeyWatcher.create(on_key_down=on_key_down)
