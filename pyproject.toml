@@ -1,19 +1,27 @@
-[tool.poetry]
+[project]
 name = "reflex-global-hotkey"
-version = "1.2.2"
 description = "Global Hotkey Watcher for Reflex"
-authors = ["Khaleel Al-Adhami <khaleel.aladhami@gmail.com>"]
-repository = "https://github.com/adhami3310/reflex-global-hotkey"
-license = "MIT"
+authors = [{ name = "Khaleel Al-Adhami", email = "khaleel.aladhami@gmail.com" }]
+license.text = "MIT"
 readme = "README.md"
 keywords = ["reflex", "reflex-custom-components"]
+requires-python = ">=3.10"
+dependencies = ["reflex>=0.7.14"]
+dynamic = ["version"]
 
-
-[tool.poetry.dependencies]
-python = "^3.10"
-reflex = "^0.7.1a"
-
+[project.urls]
+repository = "https://github.com/adhami3310/reflex-global-hotkey"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling", "uv-dynamic-versioning"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "uv-dynamic-versioning"
+
+[tool.pyright]
+
+[tool.ruff]
+
+[dependency-groups]
+dev = ["pyright", "ruff"]

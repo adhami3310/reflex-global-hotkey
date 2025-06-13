@@ -1,7 +1,5 @@
 """A Reflex component that listens for key events globally."""
 
-from __future__ import annotations
-
 from reflex import Fragment, Var
 from reflex.event import EventHandler, EventType, key_event, KeyInputInfo
 from reflex.utils import imports
@@ -41,9 +39,9 @@ class GlobalHotkeyWatcher(Fragment):
         | EventType[str]
         | EventType[()]
         | None = None,
-    ) -> GlobalHotkeyWatcher:
+    ) -> "GlobalHotkeyWatcher":
         """Create a GlobalHotkeyWatcher component."""
-        return super().create(on_key_down=on_key_down)
+        return super().create(on_key_down=on_key_down)  # pyright: ignore[reportReturnType]
 
     def render(self) -> dict:
         """Render the component."""
